@@ -3,9 +3,10 @@ import Files // marathon:https://github.com/JohnSundell/Files.git
 import Foundation
 
 /* 
-    This is a marathon script that can be used to shuffle authors, anonymizing 
-    them so to allow emailing the other participants with their colleagues 
-    material. This is a quasi-peer-review tool for use in graduate level.
+    This is a marathon swift script / swift code that can be used to shuffle 
+    authors, anonymizing  them so to allow emailing the other participants
+    with their colleagues material. This is a quasi-peer-review tool for use
+    in graduate level.
 
     The requirement is the use of pandoc's markdown as the document type, with
     a .md extension.
@@ -83,6 +84,7 @@ for file in Folder.current.files {
 }
 
 emaillist = emaillist.shuffled()
+
 
 for (index, file) in Folder.current.files.enumerated() {
     guard file.extension == "md" else {

@@ -4,9 +4,9 @@
 	
 ## Summary
 
-This is a small project for educational purposes. It strikes me how difficult it is to collaborate in scientific environments, each author has their own strict schedule and may not be able to respond timely. This code is a small personal project to amelirate that a bit. 
+This is a small project for educational purposes. It strikes me how difficult it is to collaborate in scientific environments, each author has their own strict schedule and may not be able to respond timely while the team works in a paper. This code is a small personal project to amelirate that a bit. 
 
-The aim is to create a complete publication system and a reviewer's list. The intended functionality is so that an author will submit a paper written in pandoc markdown, his files will then be passed along to anonymous reviewers registered in a blockchain, which upon returning the document files with suggestions for corrections will be rewarded a certain bitcoin amount. The original author then receives the corrections, incorporates them as suggested or respond to the reviewers and will then be allowed to upload the final document to a second blockchain, where papers will be registered.
+The aim is to create a complete publication system and a reviewer's list. The intended functionality is so that an author will submit a paper written in pandoc markdown, his files will then be passed along  to (assigned to) anonymous reviewers registered in a blockchain, which upon returning the document files with suggestions for corrections will be rewarded a certain cryptocurrency amount. The original author then receives the corrections, incorporates them as suggested or respond to the reviewers and will then be allowed to upload the final document to a second blockchain, where papers will be registered.
 
 The above final aim is not realistic to a sole writer, thus I decided to write slowly towards milestones.
 
