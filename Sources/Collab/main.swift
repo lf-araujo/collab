@@ -3,14 +3,31 @@ import Files // marathon:https://github.com/JohnSundell/Files.git
 import Foundation
 
 /* 
-    - [ ]  identificar cada artigo com número único
-    - [X]  remover email
-    - [ ] registrar o email em um documento (isso é preciso para a parte II)
-    - [X] encontrar uma forma de mostrar qual o email o arquivo deve ser enviado
-        provavelmente renomeando cada artigo com o email para o qual ele
-        deve ser encaminhado?
-    - [ ] Parte II. Retornar o arquivo corrigido para o autor original
-    - [ ] Se tiver arquivo com formato @email, então é hora de desembaralhar
+    This is a marathon script that can be used to shuffle authors, anonymizing 
+    them so to allow emailing the other participants with their colleagues 
+    material. This is a quasi-peer-review tool for use in graduate level.
+
+    The requirement is the use of pandoc's markdown as the document type, with
+    a .md extension.
+
+    At this point of development, it anonymizes the md files, renames them with 
+    the email of another student (taken from any other of the md files in
+    the same directory). The rest of the process is manual, ie, I have to 
+    on forward to the student, then receive the response and pass along to the
+    original author.
+
+    This is where I am in development now. The tool should check for files with
+    @email.com format, which means it is time to unshuffle, so I can return to
+    author.
+
+    Some conventions:
+
+    1. Author: the student who uploaded the original;
+    2. Reviewer: whoever is making suggestions in a text that is not his own.
+
+    TODOs
+
+    - [ ] If @email.com, then unshuffle
 */
 
 extension MutableCollection {
