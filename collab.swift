@@ -1,5 +1,6 @@
+import VerbalExpressions // marathon: https://github.com/lf-araujo/SwiftVerEx.git
 import Yaml // marathon: https://github.com/behrang/YamlSwift.git
-import Files // marathon:https://github.com/JohnSundell/Files.git
+import Files // marathon: https://github.com/JohnSundell/Files.git
 import Foundation
 
 /* 
@@ -55,42 +56,64 @@ extension Sequence {
 }
 
 
-var email: String = ""
-var document: [String] = []
-var emaillist:[String] = []
+func original() {
+    var email: String = ""
+    var document: [String] = []
+    var emaillist:[String] = []
 
-for file in Folder.current.files {
-    guard file.extension == "md" else {
-        continue
+    for file in Folder.current.files {
+        guard file.extension == "md" else {
+            continue
+        }
+
+        let content = try! file.readAsString()
+        let pattern = "(?s)(?<=---).*(?=---)"
+        if let range = content.range(of: pattern, options: .regularExpression) {
+            let text = String(content[range])
+            let value = try! Yaml.load(text)
+            email = value["email"].string!
+            let author = value["author"].string!
+            let emailline = "email: " + email
+            let authorline = "author: " + author
+            var anonymcontent = content.replacingOccurrences(of: "\n\(emailline)", with: "")
+            anonymcontent = anonymcontent.replacingOccurrences(of: "\n\(authorline)", with: "")
+
+            document.append(anonymcontent)
+        }
+
+        
+        emaillist.append(email)
     }
 
-    let content = try file.readAsString()
-    let pattern = "(?s)(?<=---).*(?=---)"
-    if let range = content.range(of: pattern, options: .regularExpression) {
-        let text = String(content[range])
-        let value = try! Yaml.load(text)
-        email = value["email"].string!
-        let author = value["author"].string!
-        let emailline = "email: " + email
-        let authorline = "author: " + author
-        var anonymcontent = content.replacingOccurrences(of: "\n\(emailline)", with: "")
-        anonymcontent = anonymcontent.replacingOccurrences(of: "\n\(authorline)", with: "")
+    emaillist = emaillist.shuffled()
 
-        document.append(anonymcontent)
-    }
 
-    
-    emaillist.append(email)
+    for (index, file) in Folder.current.files.enumerated() {
+        guard file.extension == "md" else {
+            continue
+        }
+
+        let outfile = try! Folder.current.createFile(named: emaillist[index])
+        try! outfile.write(string: document[index])
+    } 
 }
 
-emaillist = emaillist.shuffled()
 
+func edited() {
+    print("Estou no edited")
+}
 
-for (index, file) in Folder.current.files.enumerated() {
-    guard file.extension == "md" else {
-        continue
-    }
+// preciso pegar a lista de arquivos e checar com range se tem algum com arroba
 
-    let outfile = try Folder.current.createFile(named: emaillist[index])
-    try outfile.write(string: document[index])
+let pattern = VerEx().any("@")
+var allfiles:String = ""
+
+for file in  Folder.current.files {
+    allfiles += file.name
+}
+
+if pattern.test(allfiles) {
+    edited()
+} else {
+    original()
 }
