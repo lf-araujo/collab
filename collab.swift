@@ -4,11 +4,6 @@ import Files // marathon: https://github.com/JohnSundell/Files.git
 import Foundation
 
 /* 
-    TODOs
-
-    - [X] If @email.com, then unshuffle
-
-    ---
     
     This is a marathon swift script / swift code that can be used to shuffle 
     authors, anonymizing  them so to allow emailing the other participants

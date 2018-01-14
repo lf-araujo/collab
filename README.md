@@ -20,7 +20,7 @@ The above aim is not realistic to a sole programmer, thus I decided to write slo
 
 Small script that will crawl through md files in the same directory, extracting the identity of the authors and passing the text on to other author in one of the other texts. Each participant is both original author and reviewer for the work of other person in the pool. This is intended to be used in a graduate level course as a way to train students on being effective as critics of their colleague's materials, albeit maintaining anonymity as much as possible. The odd case should be left to the monitor (me).
 
-It is also where I am at the moment. The code is a Swift [marathon](https://github.com/JohnSundell/Marathon) script all text (.md) files in a given directory, scrambles them, and anonymises them.
+It is also where I am at the moment. The code is a Swift [marathon](https://github.com/JohnSundell/Marathon) script all text (.md) files in a given directory, scrambles them, and anonymizes them.
 
 ### Running it
 
