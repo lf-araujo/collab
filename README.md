@@ -2,15 +2,18 @@
 
 ## TODOS
 	
-	- [ ] Unscramble the files 
+	- [X] First milestone
+	- [ ] Second milestone
+	- [ ] Third milestone
+	- [ ] Ensure descentralization of the tool with blockchain. Perhaps [this](https://github.com/pixelspark/catena) library.
 
 ## Summary
 
-This is a small project for educational purposes. It strikes me how difficult it is to collaborate in scientific environments, as each author usually has his own strict schedule and may not be able to respond timely while the team is working on a paper. This code is a small project to amelirate that a bit. 
+This is a small project for educational purposes. It strikes me how difficult it is to collaborate in scientific environments, as each author usually has his own strict schedule and may not be able to respond timely while the team is working on a paper. This code is a small project to ameliorate that a bit. 
 
-The aim is to create a complete publication system and a reviewer's list. The intended functionality is so that an author will submit a paper written in pandoc markdown, his files will then be passed along  to (assigned to) anonymous reviewers registered in a blockchain, which upon returning the document files with suggestions for corrections will be rewarded a certain cryptocurrency amount. The original author then receives the corrections, incorporates them as suggested or respond to the reviewers and will then be allowed to upload the final document to a second blockchain, where papers will be registered.
+The intended functionality is so that an author will submit a paper written in pandoc markdown, his files will then be passed along to (assigned to) anonymous reviewers registered in a blockchain, which upon returning the document files with suggestions for corrections will be rewarded a certain cryptocurrency amount. The original author then receives the corrections, incorporates them as suggested or respond to the reviewers and will then be allowed to upload the final document to a second blockchain, where papers will be registered.
 
-The above final aim is not realistic to a sole programmer, thus I decided to write slowly towards milestones.
+The above aim is not realistic to a sole programmer, thus I decided to write slowly towards milestones.
 
 ## First milestone
 
@@ -29,11 +32,11 @@ It is also where I am at the moment. The code is a Swift [marathon](https://gith
 
 ## Second milestone
 
-Reviewers should be indexed in a blockchain.
+Reviewers should be indexed in a ~blockchain~ list. In this milestone some type of reviewer index will be added. This list should comprise email and specialty of the reviewer, files sent to the tool will be passed to reviewers with experience in the relevant area. The tool should then wait for a response in a fixed time frame. This response should be either accept, revision or rejection. If the first, the process is ended and a final file should be printed out (as .md file). In the second case, the file should be reviewed by the author and resent for follow-up of the original reviewer (again, fixed time frames), finally the third option also ends the process.
 
 ## Third milestone
 
-Final publication should be uploaded to a second blockchain.
+Final publication should be uploaded to a blockchain. Perhaps start by using [catena](https://github.com/pixelspark/catena)?
 
 
 ## Language used
