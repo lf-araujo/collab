@@ -4,6 +4,9 @@ import Files // marathon: https://github.com/JohnSundell/Files.git
 import Foundation
 
 /* 
+    TODO
+
+    - [ ] Create a yank function, that extracts btw ---
     
     This is a marathon swift script / swift code that can be used to shuffle 
     authors, anonymizing  them so to allow emailing the other participants
@@ -101,6 +104,7 @@ func original() {
         try! outfile.write(string: document[index])
     } 
 }
+
 
 
 func edited() {
