@@ -1,4 +1,4 @@
-import VerbalExpressions // marathon: https://github.com/lf-araujo/SwiftVerEx.git
+import VerbalExpressions // marathon: https://github.com/VerbalExpressions/SwiftVerbalExpressions.git
 import Yaml // marathon: https://github.com/behrang/YamlSwift.git
 import Files // marathon: https://github.com/JohnSundell/Files.git
 import Foundation
@@ -8,7 +8,7 @@ import Foundation
 
     - [ ] Create a yank function, that extracts btw ---
     
-    This is a marathon swift script / swift code that can be used to shuffle 
+    This is a marathon swift script / swift. code that can be used to shuffle 
     authors, anonymizing  them so to allow emailing the other participants
     with their colleagues material. This is a quasi-peer-review tool for use
     in graduate level.
